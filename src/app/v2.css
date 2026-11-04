@@ -414,6 +414,7 @@ body {
   grid-template-rows: minmax(580px, 1fr) auto;
   position: relative;
   overflow: hidden;
+  overflow: clip;
   background: var(--v2-navy);
   color: white;
 }

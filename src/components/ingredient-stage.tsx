@@ -16,10 +16,20 @@ export function IngredientStage({ country }: { country: Country }) {
 
   function select(index: number) {
     setActive(index);
-    rail.current?.querySelectorAll("button")[index]?.scrollIntoView({
+    const track = rail.current;
+    const button = track?.querySelectorAll("button")[index];
+    if (!track || !button) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
+    const left =
+      track.scrollLeft +
+      buttonRect.left -
+      trackRect.left -
+      (track.clientWidth - buttonRect.width) / 2;
+    track.scrollTo({
+      left,
       behavior: reduceMotion ? "instant" : "smooth",
-      block: "nearest",
-      inline: "center",
     });
   }
 
