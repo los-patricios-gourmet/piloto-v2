@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { IngredientStage } from "@/components/ingredient-stage";
@@ -38,7 +39,10 @@ export default async function MarketHome({
         <div className="v2-section-head">
           <h2 id="collection-title">La colección</h2>
           <Link className="v2-arrow-link" href={`/${country}/catalogo`}>
-            Ver todos los productos <span aria-hidden="true">↗</span>
+            Ver todos los productos{" "}
+            <span aria-hidden="true">
+              <ArrowUpRight />
+            </span>
           </Link>
         </div>
         <div
@@ -65,7 +69,9 @@ export default async function MarketHome({
                 <div className="v2-feature-text">
                   <h3>{categoryNames[product.category]}</h3>
                   <span>{product.short}</span>
-                  <b aria-hidden="true">↗</b>
+                  <b aria-hidden="true">
+                    <ArrowUpRight />
+                  </b>
                 </div>
               </Link>
             </Reveal>
@@ -93,7 +99,9 @@ export default async function MarketHome({
             href={`/${country}/producto/${lead.slug}`}
           >
             Descubrir {categoryNames[lead.category].toLowerCase()}{" "}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">
+              <ArrowUpRight />
+            </span>
           </Link>
         </Reveal>
       </section>
@@ -128,7 +136,10 @@ export default async function MarketHome({
             className="v2-arrow-link v2-arrow-link-gold"
             href={`/${country}/catalogo`}
           >
-            Explorar la colección <span aria-hidden="true">↗</span>
+            Explorar la colección{" "}
+            <span aria-hidden="true">
+              <ArrowUpRight />
+            </span>
           </Link>
         </Reveal>
       </section>

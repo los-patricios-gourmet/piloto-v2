@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Country, formatPrice, markets } from "@/data/markets";
@@ -9,7 +10,7 @@ const tabs: { id: Tab; label: string; icon: string }[] = [
   { id: "productos", label: "Productos", icon: "◇" },
   { id: "inventario", label: "Inventario", icon: "▤" },
   { id: "pedidos", label: "Pedidos", icon: "▣" },
-  { id: "delivery", label: "Delivery", icon: "↗" },
+  { id: "delivery", label: "Delivery", icon: "arrow" },
 ];
 const sampleOrders = [
   {
@@ -72,7 +73,9 @@ export function AdminClient() {
               className={tab === item.id ? "active" : ""}
               onClick={() => setTab(item.id)}
             >
-              <span>{item.icon}</span>
+              <span>
+                {item.icon === "arrow" ? <ArrowUpRight /> : item.icon}
+              </span>
               {item.label}
             </button>
           ))}
@@ -86,7 +89,9 @@ export function AdminClient() {
       <main className="admin-main">
         <div className="admin-topline">
           <span>PILOTO ADMINISTRATIVO · DATOS FICTICIOS</span>
-          <Link href="/">VER STOREFRONT ↗</Link>
+          <Link href="/">
+            VER STOREFRONT <ArrowUpRight />
+          </Link>
         </div>
         <div className="admin-heading">
           <div>
@@ -136,7 +141,7 @@ export function AdminClient() {
                 <div className="admin-panel-head">
                   <h2>PRODUCTOS DESTACADOS</h2>
                   <button type="button" onClick={() => setTab("productos")}>
-                    VER TODOS ↗
+                    VER TODOS <ArrowUpRight />
                   </button>
                 </div>
                 {products.slice(0, 3).map((p) => (
@@ -154,7 +159,7 @@ export function AdminClient() {
                 <div className="admin-panel-head">
                   <h2>ACTIVIDAD DE MUESTRA</h2>
                   <button type="button" onClick={() => setTab("pedidos")}>
-                    VER PEDIDOS ↗
+                    VER PEDIDOS <ArrowUpRight />
                   </button>
                 </div>
                 {sampleOrders.map((o) => (

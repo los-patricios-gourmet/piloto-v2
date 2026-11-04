@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -36,7 +37,10 @@ export function IngredientStage({ country }: { country: Country }) {
           className="v2-arrow-link v2-arrow-link-gold"
           href={`/${country}/catalogo`}
         >
-          Explorar la colección <span aria-hidden="true">↗</span>
+          Explorar la colección{" "}
+          <span aria-hidden="true">
+            <ArrowUpRight />
+          </span>
         </Link>
       </div>
       <div className="v2-object-world">
@@ -87,7 +91,10 @@ export function IngredientStage({ country }: { country: Country }) {
         className="v2-stage-detail"
         href={`/${country}/producto/${product.slug}`}
       >
-        Conocer esta selección <span aria-hidden="true">↗</span>
+        Conocer esta selección{" "}
+        <span aria-hidden="true">
+          <ArrowUpRight />
+        </span>
       </Link>
     </section>
   );

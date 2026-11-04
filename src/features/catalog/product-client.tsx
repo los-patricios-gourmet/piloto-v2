@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import { useState } from "react";
 import Link from "next/link";
 import { Country, Product, formatPrice, markets } from "@/data/markets";
@@ -106,7 +107,10 @@ export function ProductClient({
             type="button"
             onClick={addItem}
           >
-            AGREGAR AL CARRITO <span>↗</span>
+            AGREGAR AL CARRITO{" "}
+            <span>
+              <ArrowUpRight />
+            </span>
           </button>
           {notice && (
             <p className="added-notice" role="status">
@@ -133,7 +137,9 @@ export function ProductClient({
                 <img src={p.image} alt={`Imagen provisional de ${p.name}`} />
                 <div>
                   <strong>{p.name.replace(" · selección piloto", "")}</strong>
-                  <b>↗</b>
+                  <b>
+                    <ArrowUpRight />
+                  </b>
                 </div>
               </Link>
             </Reveal>

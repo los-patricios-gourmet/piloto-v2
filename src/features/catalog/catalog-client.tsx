@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Country, categoryNames, Category, markets } from "@/data/markets";
@@ -147,7 +148,7 @@ export function CatalogClient({ country }: { country: Country }) {
             descubrir, conocer cada presentación y elegir con confianza.
           </p>
           <Link className="outline-action" href={`/${country}`}>
-            VOLVER AL INICIO ↗
+            VOLVER AL INICIO <ArrowUpRight />
           </Link>
         </Reveal>
       </section>

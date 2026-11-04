@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import Link from "next/link";
 import { Country, formatPrice, getProduct, markets } from "@/data/markets";
 import { useCart } from "./cart-context";
@@ -128,7 +129,10 @@ export function CartClient({ country }: { country: Country }) {
               definirán antes del lanzamiento.
             </p>
             <Link href={`/${country}/checkout`} className="filled-action">
-              CONTINUAR A CHECKOUT <span>↗</span>
+              CONTINUAR A CHECKOUT{" "}
+              <span>
+                <ArrowUpRight />
+              </span>
             </Link>
             <small>SIMULACIÓN · SIN PAGOS REALES</small>
           </aside>
@@ -139,7 +143,7 @@ export function CartClient({ country }: { country: Country }) {
           <h2>TU CARRITO ESTÁ ESPERANDO.</h2>
           <p>Elige una presentación de la colección para comenzar.</p>
           <Link href={`/${country}/catalogo`} className="filled-action">
-            EXPLORAR LA COLECCIÓN ↗
+            EXPLORAR LA COLECCIÓN <ArrowUpRight />
           </Link>
         </div>
       )}

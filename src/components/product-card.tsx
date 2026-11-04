@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import Link from "next/link";
 import { Country, formatPrice, Product } from "@/data/markets";
 import { Reveal } from "./reveal";
@@ -24,7 +25,7 @@ export function ProductCard({
             alt={`Imagen provisional de ${product.name}`}
           />
           <span className="product-card-arrow" aria-hidden="true">
-            ↗
+            <ArrowUpRight />
           </span>
         </div>
         <h3>{product.name}</h3>

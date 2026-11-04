@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "@/components/arrow-up-right";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { Country, formatPrice, getProduct, markets } from "@/data/markets";
@@ -52,7 +53,7 @@ export function CheckoutClient({ country }: { country: Country }) {
             enviaron ni guardaron.
           </p>
           <Link className="filled-action" href={`/${country}`}>
-            VOLVER A LA TIENDA ↗
+            VOLVER A LA TIENDA <ArrowUpRight />
           </Link>
         </div>
       </main>
@@ -75,7 +76,7 @@ export function CheckoutClient({ country }: { country: Country }) {
         <div className="empty-cart">
           <h2>TU CARRITO ESTÁ VACÍO.</h2>
           <Link href={`/${country}/catalogo`} className="filled-action">
-            EXPLORAR LA COLECCIÓN ↗
+            EXPLORAR LA COLECCIÓN <ArrowUpRight />
           </Link>
         </div>
       ) : (
@@ -233,7 +234,9 @@ export function CheckoutClient({ country }: { country: Country }) {
                 )}
                 <button type="submit" className="filled-action">
                   {stage === 2 ? "FINALIZAR SIMULACIÓN" : "CONTINUAR"}{" "}
-                  <span>↗</span>
+                  <span>
+                    <ArrowUpRight />
+                  </span>
                 </button>
               </div>
             </form>
